@@ -16,6 +16,11 @@ bot.onText(/\/bells/, (msg, match) => {
  15:20-16:00`)
 })
 
+bot.onText(/\/event/, (msg, match) => {
+	bot.sendMessage(msg.chat.id , `i have to remind you of event `+msg.text.match(/\/event(.*) [0-9]{1,2}.[0-9][0-9].[0-9]{2,4}.[0-9].[0-9]/)[1]
+)
+})
+
 bot.on('message', msg => {
   bot.sendMessage(msg.chat.id, `Hello, ${msg.from.first_name}`)
 })
