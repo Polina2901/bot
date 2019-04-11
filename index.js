@@ -17,7 +17,8 @@ bot.onText(/\/bells/, (msg, match) => {
 })
 
 bot.onText(/\/event/, (msg, match) => {
-	bot.sendMessage(msg.chat.id , `i have to remind you of event `+(msg.text.match(/\/event(.*)/)[1]))
+	bot.sendMessage(msg.chat.id , `i have to remind you of event `+(msg.text.match(/\/event(.*)([0-9]{1,2})/)[1])+
+	`that happens on minute ` +(msg.text.match(/\/event(.*)([0-9]{1,2})/)[2]))
 })
 
 bot.on('message', msg => {
